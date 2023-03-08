@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block hello %} Design By mahesh.projects33@gmail.com {% endblock hello %}
+
+{% block text %}
+
+
+<form action="" name="myForm" method="POST">
+    {% csrf_token %}
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow rounded-3">
+            <div class="card-header bg-primary text-white rounded-top">
+              <h4 class="text-center m-0">Total Bricks Calculator</h4>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="fw-bold mb-2 for="roomLength">Length of Room (in meters)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-pill" name="L" placeholder="Total Room Length">
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="roomLength">Width of Room (in meters)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-pill" name="W" placeholder="Total Room Width">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="roomLength">Height of Room (in meters)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-pill" name="H" placeholder="Total Room Height">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="roomLength">Thickness of Wall (in meters)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-pill" name="T" placeholder="Total Thickness of Wall">
+                </div>
+              </div>
+
+              
+
+               <div class="form-group">
+                <label class="fw-bold mb-2" for="roomLength">Mortar Thickness (in meters)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control rounded-pill" name="MT" placeholder="Total Mortar Thickness">
+                </div>
+              </div> 
+
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="doorSize">Size of Window (in meters)</label>
+                <div class="input-group">
+                  <div class="form-row">
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill" name="WW" placeholder="Width">
+                    </div>
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill"  name="WH" placeholder="Height">
+                    </div>
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill" name="WT" placeholder="Total No. of Windows">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="doorSize">Size of Door (in meters)</label>
+                <div class="input-group">
+                  <div class="form-row">
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill" name="DW" placeholder="Width">
+                    </div>
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill"  name="DH" placeholder="Height">
+                    </div>
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill" name="DT" placeholder="Total No. of Doors">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="doorSize">Size of Brick (in meters)</label>
+                <div class="input-group">
+                  <div class="form-row">
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill"  name="BL" placeholder="Length">
+                    </div>
+                    <div class="col-9 py-1">
+                      <input type="text" class="form-control rounded-pill" name="BW" placeholder="Width">
+                    </div>
+                    <div class="col-9 py-1">
+                        <input type="text" class="form-control rounded-pill" name="BH" placeholder="Height">
+                      </div>
+                    <div class="col-9 py-1">
+                    <input type="text" class="form-control rounded-pill" name="WB" placeholder="Wastage % of Bricks">
+                      </div>
+                  </div>
+                </div>
+              </div>
+  
+              
+  
+              <div class="form-group">
+                <label class="fw-bold mb-2" for="answer">Answer:</label>
+                <div class="input-group">
+                  <div class="form-control bg-light text-primary font-weight-bold rounded-pill" style="text-align: center;">
+                    {{answer}}
+                    
+                    {% for message in messages %}
+                    <h5 class="text-danger mb-0">{{message}}</h5>
+                    {% endfor %}
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="card-footer bg-white rounded-bottom">
+              <button class="btn btn-primary btn-block rounded-pill">Calculate</button>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+  
+
+
+
+
+{% endblock text %}
